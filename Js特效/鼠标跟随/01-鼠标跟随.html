@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			img {
+				position: absolute;
+				width: 100px;
+				border: 1px solid #ccc;
+				padding-top: 10px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="image/img.jpg" >
+		
+		<script>
+			var img = document.getElementsByTagName("img")[0];
+			var timer = null;
+			var targetx = 0;var targety = 0;
+			var leaderx = 0;var leadery = 0;
+			
+			document.onclick = function(event){
+				event = event || window.event;
+				 var pagey = event.pageY ||scroll().top+event.clientY; 
+				 var pagex = event.pageX ||scroll().top+event.clientX;
+				 
+				 targety = pagey-30;
+				 targetx = pagex-50;
+				 clearInterval(timer);
+				
+				 
+				 timer = setInterval(function(){
+					 leaderx = img.offsetLeft;
+					 var stepx = (targetx - leaderx)/10;
+					 stepx= stepx>0?Math.ceil(stepx):Math.floor(stepx);
+					 leaderx = leaderx + stepx;
+					 img.style.left = leaderx +"px";
+					 
+					 leadery = img.offsetTop;
+					 var stepy = (targety - leadery)/10;
+					 stepy= stepy>0?Math.ceil(stepy):Math.floor(stepy);
+					 leadery = leadery + stepy;
+					 img.style.top = leadery +"px";
+				 },10)
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

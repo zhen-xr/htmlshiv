@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button>变！！！</button>
+		<div></div>
+
+		<script>
+			var btn = document.getElementsByTagName("button")[0];
+			var div = document.getElementsByTagName("div")[0];
+
+			btn.onclick = function() {
+				var json = {
+					"left": 10,
+					"top": 200,
+					"width": 300,
+					"height": 200
+				};
+				animate(div, json);
+			}
+
+			function animate(ele, json) {
+				clearInterval(ele.timer);
+				ele.timer = setInterval(function() {
+					for (var k in json) {
+						var leader = parseInt(getStyle(ele, k)) || 0;
+						var step = (json[k] - leader) / 10;
+						step = step > 0 ? Math.ceil(step) : Math.floor(step);
+						leader = leader + step;
+						ele.style[k] = leader + "px";
+						//清除有问题
+						// if (Math.abs(json[k] - leader) <= Math.abs(step)) {
+						// 	ele.style[k] = json[k] + "px";
+						// 	clearInterval(ele.timer);
+						// }
+						if(json[k] !== leader){
+							bool = false;
+						}
+					}
+					if(bool){
+						clearInterval(ele.timer);
+					}
+				}, 10);
+			}
+
+			function getStyle(ele, attr) {
+				if (window.getComputedStyle) {
+					return window.getComputedStyle(ele, null)[attr];
+				}
+				return ele.currentStyle[attr];
+			}
+		</script>
+	</body>
+</html>

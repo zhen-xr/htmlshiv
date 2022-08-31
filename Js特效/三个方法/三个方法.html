@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//trim();去除前后的空格
+			var str1 = "    你好         ";
+			console.log(str1);
+			console.log(str1.trim());
+
+			//replace(); 替换和全局替换值。
+			var str2 = "Today is fine day,today is fine day!"
+			console.log(str2);
+			console.log(str2.replace(/today/ig, "tomorrow"));
+			
+			//search();  给字符差索引
+			var str3 = "aaabcdefgbcaaa";
+			console.log(str3.search(/bc/));
+			console.log(str3.indexOf("bc"));
+		</script>
+	</body>
+</html>

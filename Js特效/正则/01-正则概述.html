@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1.对象定义法
+			var reg1 = new RegExp(/abc/);
+			console.log(reg1);
+			console.log(typeof reg2);
+			
+			//2.字面量[]{}/a/
+			var reg2 = /def/;
+			console.log(reg2);
+			console.log(typeof reg2);
+			
+			//使用：test();正则表带是有一个方法，test，有一个返回值是bool类名，决定参数是否符合正则表达式
+			console.log(reg1.test("abc"));
+			console.log(reg1.test("hjkl"));
+		</script>
+	</body>
+</html>

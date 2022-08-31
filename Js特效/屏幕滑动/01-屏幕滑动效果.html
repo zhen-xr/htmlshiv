@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="屏幕滑动.css" />
+	</head>
+	<body>
+		<ul id="ul">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+		</ul>
+		<ol id="ol">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+		<script src="屏幕滑动.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var ulBox = $("ul");
+				var ulBoxLi = ulBox.children;
+				var olBox = $("ol");
+				var olBoxLi = olBox.children;
+				var bgColor = ["pink", "purple", "red", "blue", "yellow"];
+				var timer = null;
+				var leader = 0;
+
+				window.onscroll = function() {
+					leader = document.body.scrollTop + document.documentElement.scrollTop;
+				}
+
+				for (var i = 0; i < ulBoxLi.length; i++) {
+					ulBoxLi[i].style.backgroundColor = bgColor[i];
+					olBoxLi[i].style.backgroundColor = bgColor[i];
+
+					olBoxLi[i].index = i;
+					olBoxLi[i].onclick = function() {
+						clearInterval(timer);
+						target = ulBoxLi[this.index].offsetTop;
+						timer = setInterval(function() {
+							var step = (target - leader) / 10;
+							step = step > 0 ? Math.ceil(step) : Math.floor(step);
+							leader = leader + step;
+
+							if (leader === target) {
+								clearInterval(timer);
+							}
+
+							window.scrollTo(0, leader);
+						}, 10)
+
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
