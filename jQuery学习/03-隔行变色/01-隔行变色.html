@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				var jqLi = $("li");
+				
+				for(var i=0;i<jqLi.length;i++){
+					if(i%2===0){
+						jqLi[i].style.backgroundColor = "pink";
+					}else{
+						jqLi.get(i).style.backgroundColor = "yellow";
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

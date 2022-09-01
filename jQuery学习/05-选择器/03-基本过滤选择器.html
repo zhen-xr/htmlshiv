@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var jqliodd = $("ul li:odd");
+				jqliodd.css("background","pink");
+				
+				var jqlieven = $("ul li:even");
+				jqlieven.css("background","yellow");
+				
+				var jqlifirst = $("ul li:eq(0)");
+				jqlifirst.css("background","black");
+				
+				var li = $("li");
+				var jqli = $("ul li:eq("+(li.length-1)+")");
+				jqli.css("background","blue");
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>
