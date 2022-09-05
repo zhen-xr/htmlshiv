@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<script>
+			document.onmouseover = function (event) {
+				console.log(event.bubbles);
+				console.log(event.target);
+			}
+			
+			var box = document.getElementsByClassName("box")[0];
+			box.onmouseover = function (event){
+				console.log("鼠标放到了box上");
+				
+				event = event ||window.event;
+				if(event && event.stopPropagation){
+					event.stopPropagation();
+				}else{
+					event.cancelBubble = true;
+				}
+			}
+			
+		</script>
+	</body>
+</html>

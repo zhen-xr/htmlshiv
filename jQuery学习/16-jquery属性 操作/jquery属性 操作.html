@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				var jqbtn = $("button");
+				var jqinp1 = $("input:eq(0)");
+				var jqinp2 = $("input:checkbox");
+				
+				jqbtn.click(function(){
+					jqinp1.title = 111;
+					console.log(jqinp1.title);
+					
+					jqinp1.attr("title",111);
+					console.log(jqinp1.attr("title"));
+					
+					//两个参数是给属性赋值，单个参数是获取属性值。
+					jqinp1.attr("class","aaa");
+					console.log(jqinp1.attr("class"));
+					
+					jqinp1.removeAttr("class");
+					console.log(jqinp1.attr("class"));
+					
+					//form中的特殊属性，用prop
+					jqinp2.prop("checked",true);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>绑定</button>
+		<input type="text">
+		<input type="checkbox">
+	</body>
+</html>

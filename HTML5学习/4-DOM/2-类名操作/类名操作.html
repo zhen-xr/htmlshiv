@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+			    width: 300px;
+			    height: 100px;
+			    margin:10px auto;
+			    border: 1px solid #000;
+			}
+			.active{
+				border-radius: 50%;
+				background-color: pink;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box1 = document.querySelectorAll('.box');
+				for(var i=0;i<box1.length;i++){
+					box1[i].style.background = 'pink';
+				}
+				var box2 = document.querySelector('.box');
+				box2.classList.add('active');
+				
+				document.querySelector('button').onclick = function(){
+					document.querySelector('.box3').classList.toggle('active');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box box1 "></div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+		<div class="box box4"></div>
+		
+		<button>切换</button>
+	</body>
+</html>

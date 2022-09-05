@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			div {
+				width: 1150px;
+				height: 400px;
+				margin: 50px auto;
+				overflow: hidden;
+				border: 1px solid #ccc;
+			}
+
+			li {
+				width: 240px;
+				height: 400px;
+				float: left;
+			}
+
+			ul {
+				width: 1300px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script>
+			window.onload = function() {
+
+
+				var div = document.getElementsByTagName("div")[0];
+				var liArr = div.getElementsByTagName("li");
+
+				for (var i = 0; i < liArr.length; i++) {
+					liArr[i].style.background = "url(images/" + (i + 1) + ".jpg) no-repeat";
+
+
+					liArr[i].onmouseover = function() {
+						for (var j = 0; j < liArr.length; j++) {
+							animate(liArr[j], {
+								"width": 100
+							});
+						}
+						animate(this, {
+							"width": 800
+						});
+					}
+				}
+
+				div.onmouseout = function() {
+					for (var j = 0; j < liArr.length; j++) {
+						animate(liArr[j], {
+							"width": 240
+						});
+					}
+				}
+
+
+				function animate(ele, json) {
+					clearInterval(ele.timer);
+					ele.timer = setInterval(function() {
+						var bool = true;
+						for (var k in json) {
+							var leader = parseInt(getStyle(ele, k)) || 0;
+							var step = (json[k] - leader) / 10;
+							step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+							leader = leader + step;
+							ele.style[k] = leader + "px";
+
+							if (json[k] !== leader) {
+								bool = false;
+							}
+						}
+
+						if (bool) {
+							clearInterval(ele.timer);
+						}
+					}, 10);
+				}
+
+				function getStyle(ele, attr) {
+					if (window.getComputedStyle) {
+						return window.getComputedStyle(ele, null)[attr];
+					}
+					return ele.currentStyle[attr];
+				}
+			}
+		</script>
+		<div>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+</html>

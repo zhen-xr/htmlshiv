@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("button").click(function(){
+					var jqNewLi = $("<li>我是JQ创建,append方法添加</li>");
+					//append(); 在盒子的最末尾添加一个元素。
+					$("ul").append(jqNewLi);
+					jqNewLi.appendTo($("ul"));
+					
+					//prepend(); 在盒子最前面添加
+					$("ul").prepend(jqNewLi);
+					jqNewLi.prependTo($("ul"));
+					
+					//下面两个方法是操作兄弟元素的。放在兄弟元素之后或者之前
+					//after
+					$("li").after(jqNewLi);
+					
+					//before();
+					$("li").before(jqNewLi)
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>添加节点</button>
+		<ul>
+			<li>我是土著li</li>
+		</ul>
+	</body>
+</html>

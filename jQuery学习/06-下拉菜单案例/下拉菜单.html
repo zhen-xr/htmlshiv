@@ -52,11 +52,11 @@
 			$(function() {
 				var jqli = $(".wrap>ul>li");
 				jqli.mouseenter(function() {
-					$(this).children("ul").show();
+					$(this).children("ul").slideDown("fast");
 				});
 				
 				jqli.mouseleave(function() {
-					$(this).children("ul").hide();
+					$(this).children("ul").slideUp("fast");
 				});
 			});
 		</script>

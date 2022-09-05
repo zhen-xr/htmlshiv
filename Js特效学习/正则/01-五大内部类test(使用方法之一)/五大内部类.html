@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			console.log("-------------预定义类-------------");
+			console.log(/./.test("\n\r")); //F
+			console.log(/./.test("adsfadsgdfgdfg")); //T
+			console.log(/\d/.test(123)); //T
+			console.log(/\d/.test("adsfadsgdfgdfg")); //F
+			console.log(/\s/.test("     ")); //T
+			console.log(/\s/.test("asdfadsf")); //F
+			console.log(/\w/.test("$")); //F
+			console.log(/\w/.test("_")); //T
+
+			console.log("-------------简单类-------------");
+			console.log(/chaoge/.test("chaoge")); //T
+			console.log(/chaoge/.test("chaogenihao")); //T
+			console.log(/chaoge/.test("nihaochaoge")); //T
+			console.log(/chaoge/.test("chaonihaoge")); //F
+			console.log(/chaoge/.test("chao")); //F
+			console.log(/[chaoge]/.test("chaoge")); //T
+			console.log(/[chaoge]/.test("chaogenihao")); //T
+			console.log(/[chaoge]/.test("nihaochaoge")); //T//T
+			console.log(/[chaoge]/.test("chaonihaoge")); //T
+			console.log(/[chaoge]/.test("chao")); //T
+			console.log(/[chaoge]/.test("a;ljr jglkrj grjgr")); //T
+			console.log(/[chaoge]/.test("*")); //F
+
+			console.log("-------------负向类-------------");
+			console.log(/[^abc]/.test("iiii")); //true
+			console.log(/[^abc]/.test("aiiii")); //只有一部分睁一只眼闭一只眼true
+			console.log(/[^abc]/.test("abc")); //只有一部分睁一只眼闭一只眼true//F
+			console.log(/[^abc]/.test("b")); //只有一部分睁一只眼闭一只眼true//F
+			console.log(/[^abc]/.test("bcdef")); //只有一部分睁一只眼闭一只眼true
+			console.log(/[^abc]/.test("abcdef")); //只有一部分睁一只眼闭一只眼true
+
+			console.log("-------------范围类-------------");
+			console.log(/[a-c]/.test("dghhj"));//F
+			console.log(/[a-c]/.test("b"));//T
+
+			console.log("-------------组合类-------------");
+			console.log(/[a-c1-6]/.test("dghhj"));//F
+			console.log(/[a-c1-6]/.test("b"));//T
+			console.log(/[a-c1-6]/.test(8));//F
+			console.log(/[a-c1-6]/.test(3));//T
+		</script>
+	</body>
+</html>

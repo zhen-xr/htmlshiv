@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box {
+				width: 322px;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+			}
+
+			span {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 30px;
+				height: 20px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script>
+			window.onload = function() {
+				var close = document.getElementById("close");
+				var box = document.getElementsByClassName("box")[0];
+				var beader = document.getElementsByClassName("beader")[0];
+
+				close.onclick = function(){
+					animate(beader,{"height":0},function(){
+						animate(box,{"width":0});
+					});
+				}
+
+				function animate(ele, json,fn) {
+					clearInterval(ele.timer);
+					ele.timer = setInterval(function() {
+						var bool = true;
+						for (var k in json) {
+							var leader = parseInt(getStyle(ele, k)) || 0;
+							var step = (json[k] - leader) / 10;
+							step = step > 0 ? Math.ceil(step) : Math.floor(step);
+							leader = leader + step;
+							ele.style[k] = leader + "px";
+							if (json[k] !== leader) {
+								bool = false;
+							}
+						}
+
+						if (bool) {
+							clearInterval(ele.timer);
+							if(fn){
+								fn();
+							}
+						}
+					}, 10);
+				}
+
+				function getStyle(ele, attr) {
+					if (window.getComputedStyle) {
+						return window.getComputedStyle(ele, null)[attr];
+					}
+					return ele.currentStyle[attr];
+				}
+			}
+		</script>
+		<div class="box">
+			<span id="close"></span>
+			<div class="head">
+				<img src="images/t.jpg">
+			</div>
+			<div class="beader">
+				<img src="images/b.jpg">
+			</div>
+		</div>
+	</body>
+</html>

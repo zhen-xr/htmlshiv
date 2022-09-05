@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+				width: 100px;
+			div {
+				height: 100px;
+				background-color: pink;
+				margin: 10px;
+				border: 1px solid #000000;
+			}
+			.current{
+				background-color: black;
+			}
+		</style>
+		<script src="../jquery-1.11.1.js"></script>
+		<script>
+			$(function(){
+				$("button").eq(0).click(function(){
+					$("div").addClass("current");
+				});
+				
+				$("button").eq(1).click(function(){
+					$("div").eq(1).removeClass("current");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>添加</button>
+		<button>删除</button>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

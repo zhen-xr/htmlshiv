@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			ul,
+			ol {
+				list-style: none;
+			}
+
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			ul {
+				width: 100%;
+				height: 100%;
+			}
+
+			#ul li {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#ol {
+				position: fixed;
+				top: 10px;
+				left: 50px;
+			}
+			
+			#ol li {
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				border: 1px solid #ccc;
+				cursor: pointer;
+				margin-top: -1px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>帽子区域</li>
+			<li>衣服区域</li>
+			<li>裤子区域</li>
+			<li>袜子区域</li>
+			<li>鞋子区域</li>
+		</ul>
+		<ol id="ol">
+			<li>帽子</li>
+			<li>衣服</li>
+			<li>裤子</li>
+			<li>袜子</li>
+			<li>鞋子</li>
+		</ol>
+		
+		<script>
+			
+			window.onload = function(){
+				var ul = document.getElementById("ul");
+				var ulLiArr = ul.children;
+				var ol = document.getElementById("ol");
+				var olLiArr = ol.children;
+				
+				var target = 0;
+				var leader = 0;
+				var timer = null;
+				
+				var arrColor = ["red","pink","yellow","blue","orange"];
+				for(var i=0;i<arrColor.length;i++){
+					ulLiArr[i].style.backgroundColor = arrColor[i];
+					olLiArr[i].style.backgroundColor = arrColor[i];
+					
+					olLiArr[i].index =i;
+					olLiArr[i].onclick = function() {
+						target = ulLiArr[this.index].offsetTop;
+						
+						clearInterval(timer);
+						timer = setInterval(function(){
+							var step = (target-leader)/10;
+							step = step>0?Math.ceil(step):Math.floor(step);
+							leader = leader+step;
+							window.scrollTo(0,leader);
+							
+							if(Math.abs(target-leader)<=Math.abs(step)){
+								clearInterval(timer);
+							}
+						},10);
+					}
+					
+					
+				}
+			}
+		</script>
+	</body>
+</html>

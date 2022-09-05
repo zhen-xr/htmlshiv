@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: #000000;
+				border: 1px solid #000;
+			}
+		</style>
+		
+		<script src="../jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+				$(function(){
+					// var json1 = {"width":300,"height":300,"background-color":"pink","boder-radius":50};
+					// var json2 = {"width":30,"height":30,"background-color":"pink","boder-radius":5};
+					
+					$("button").click(function(){
+					// 	$("div").animate(json1,2000,function(){
+					// 		$("div").animate(json2,2000);
+					// 	});
+					
+						$("div").animate({"width":300,"height":300,"background-color":"pink","boder-radius":50},2000);
+						$("div").animate({"display":"none","opacity":0,"width":0,"height":0},2000);
+					});
+				});
+		</script>
+	</head>
+	<body>
+		<button>动画</button>
+		<div></div>
+	</body>
+</html>

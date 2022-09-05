@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+		<script>
+			//第四种(重点)
+			$(function() {
+				$(document).on("click mouseenter", ".box", {
+					"name": 111
+				}, function(event) {
+					alert(event.data.name);
+				});
+
+				$(document).on("click mouseenter", ".box", function() {
+					alert(1);
+				});
+
+				$(document).off("mouseenter", ".box");
+
+
+				$(function() {
+					$(".box").on("click", function() {
+						alert(5);
+					})
+				})
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
