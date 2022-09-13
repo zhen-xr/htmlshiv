@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				background-color: #ccc;
+			}
+			.box{
+				width: 509px;
+				height: 270px;
+				animation: go 20s linear infinite;
+				
+			}
+			.shark{
+				width: 509px;
+				height: 270px;
+				background: url(image/shark1.png) no-repeat;
+				animation: shark 1s steps(8) infinite;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				animation: go1 20s linear infinite;
+			}
+			.fish{
+				width: 174px;
+				height: 126px;
+				background: url(image/fish8.png) no-repeat;
+				animation: fish 1s steps(8) infinite;
+			}
+			
+			@keyframes  shark{
+				from{}
+				to{
+					background-position: left -2160px;
+				}
+			}
+			@keyframes  fish{
+				from{}
+				to{
+					background-position: left -1008px;
+				}
+			}
+			@keyframes go{
+				from{
+					transform: translateX(-500px);
+				}
+				to{
+					transform: translateX(1500px);
+				}
+			}
+			@keyframes go1{
+				from{
+					transform: translateX(-200px);
+				}
+				to{
+					transform: translateX(1200px) translateY(400px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="shark">
+				
+			</div>
+		</div>
+		<div class="box2">
+			<div class="fish"></div>
+		</div>
+	</body>
+</html>

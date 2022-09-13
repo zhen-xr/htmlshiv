@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				margin: 100px;
+				animation: gun 3s;
+			}
+			@keyframes gun{
+				0%{
+					transform: translateX(0px);
+				}
+				25%{
+					transform: translateX(300px) rotate(360deg);
+				}
+				50%{
+					transform: translateX(300px) translateY(200px);
+				}
+				75%{
+					background-color: yellow;
+					transform: translateY(200px) rotate(360deg);
+				}
+				100%{
+					transform: translateX(0) rotate(360deg);
+				}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

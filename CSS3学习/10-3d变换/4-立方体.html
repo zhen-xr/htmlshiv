@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				/* border: 1px solid #000000; */
+				position: relative;
+				transform-style: preserve-3d;
+				animation: gun 8s linear infinite;
+				border-radius: 50%;
+			}
+			.box>div{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				font: 100px/300px "microsoft yahei";
+				color: #FFFFFF;
+				text-align: center;
+				
+			}
+			.left{
+				background-color: pink;
+				transform-origin: left;
+				transform: rotateY(90deg) translateX(-150px);
+			}
+			.right{
+				background-color: plum;
+				transform-origin: right;
+				transform: rotateY(90deg) translateX(150px);	
+			}
+			.forward{
+				background-color: orange;
+				/* transform-origin: right; */
+				transform: translateZ(150px);	
+			}
+			.back{
+				background-color: yellow;
+				/* transform-origin: right; */
+				transform: translateZ(-150px);	
+			}
+			.up{
+				background-color: red;
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			.down{
+				background-color: #800080;
+				transform: rotateX(90deg) translateZ(-150px);
+			}
+			
+			@keyframes  gun{
+				from{
+					transform: rotateX(0) rotateY(0);
+				}
+				to{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="up">上</div>
+			<div class="down">下</div>
+			<div class="left">左</div>
+			<div class="right">右</div>
+			<div class="forward">前</div>
+			<div class="back">后</div>
+		</div>
+	</body>
+</html>

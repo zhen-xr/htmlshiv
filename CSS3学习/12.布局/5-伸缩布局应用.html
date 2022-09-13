@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+
+			}
+
+			body {
+				background-color: #ccc;
+				font-size: 22px;
+				font-family: "microsoft yahei";
+			}
+
+			.box {
+				width: 600px;
+				height: 60px;
+				margin: 50px auto;
+			}
+
+			ul {
+				width: 600px;
+				height: 60px;
+				background-color: #fff;
+				display: flex;
+				justify-content: space-around;
+				border: 1px solid #000000;
+			}
+
+			li {
+				width: 100px;
+				height: 60px;
+				/* margin: 10px; */
+				background-color: pink;
+				line-height: 60px;
+				text-align: center;
+			}
+			.box2{
+				width: 600px;
+				height: 600px;
+				border: 1px solid #000000;
+				margin: 10px auto;
+				display: flex;
+				flex-direction: column;
+			}
+			.header{
+				flex: 2;
+				background-color: red;
+				
+			}
+			.section{
+				flex: 6;
+				display: flex;
+			}
+			.left{
+				flex: 3;
+				background-color: yellow;
+			}
+			.right{
+				flex: 7;
+				background-color: green;
+			}
+			.footer{
+				
+				flex: 2;
+				background-color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li>消息</li>
+				<li>通讯录</li>
+				<li>发现</li>
+				<li>我的</li>
+				<li>空间</li>
+			</ul>
+		</div>
+		<div class="box2">
+			<div class="header"></div>
+			<div class="section">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+			<div class="footer"></div>
+
+		</div>
+	</body>
+</html>

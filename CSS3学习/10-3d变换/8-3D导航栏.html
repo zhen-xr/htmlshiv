@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			ul{
+				width: 500px;
+				height: 50px;
+				/* border: 1px solid #000000; */
+				margin: 100px auto;
+			}
+			li{
+				float: left;
+				width: 100px;
+				height: 50px;
+				position: relative;
+				transform-style: preserve-3d;
+				transition: all 1s;
+			}
+			span{
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top:0;
+				text-align: center;
+				line-height: 50px;
+				background-color: #008000;
+				transition: all 1s;
+			}
+			span:nth-child(1){
+				transform: translateZ(25px);
+			}
+			span:nth-child(2){
+				background-color: yellow;
+				transform: rotateX(90deg) translateZ(25px);
+			}
+			ul:hover li{
+				transform: rotateX(-90deg);
+			}
+			li:nth-child(2){
+				transition-delay: 0.2s;
+			}
+			li:nth-child(3){
+				transition-delay: 0.4s;
+			}
+			li:nth-child(4){
+				transition-delay: 0.6s;
+			}
+			li:nth-child(5){
+				transition-delay: 0.8s;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span>魈</span>
+				<span>降魔大圣</span>
+			</li>
+			<li>
+				<span>魈</span>
+				<span>降魔大圣</span>
+			</li>
+			<li>
+				<span>魈</span>
+				<span>降魔大圣</span>
+			</li>
+			<li>
+				<span>魈</span>
+				<span>降魔大圣</span>
+			</li>
+			<li>
+				<span>魈</span>
+				<span>降魔大圣</span>
+			</li>
+		</ul>
+	</body>
+</html>

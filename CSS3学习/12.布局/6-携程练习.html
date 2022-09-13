@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				
+				/* text-align: none; */
+			}
+			body{
+				font-size: 22px;
+				font-family: "microsoft yahei";
+			}
+			img{
+				display: block;
+				width: 100%;
+			}
+			a{
+				text-decoration: none;
+			}
+			.nav1{
+				height: 90px;
+				display: flex;
+				background-color: pink;
+				margin: 10px;
+				border-radius: 15px;
+				
+			}
+			.left{
+				flex: 1;
+				border-right: 1px solid #fff;
+			}
+			.right{
+				/* display: flex; */
+				flex: 2;
+			}
+			.right a{
+				float: left;
+				width: 50%;
+				height: 45px;
+				line-height: 45px;
+				text-align: center;
+				color: #fff;
+				box-sizing: border-box;
+				
+				border-bottom: 1px solid #fff;
+				border-right: 1px solid #fff;
+			}
+			.nav1:nth-child(5) .right a{
+				width: 33.33%;
+			}
+			.footer{
+				display: flex;
+			}
+			.footer a:nth-child(1){
+				flex: 1;
+			}
+			.footer a:nth-child(2){
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+			<a href="#"><img src="images/banner.jpg" ></a>
+		</div>
+		<div class="nav1">
+			<div class="left"></div>
+			<div class="right">
+				<a href="#">海外酒店</a>
+				<a href="#">团购</a>
+				<a href="#">特惠酒店</a>	
+				<a href="#">客栈公寓</a>
+			</div>
+		</div>
+		<div class="nav1">
+			<div class="left"></div>
+			<div class="right">
+				<a href="#">海外酒店</a>
+				<a href="#">团购</a>
+				<a href="#">特惠酒店</a>	
+				<a href="#">客栈公寓</a>
+			</div>
+		</div>
+		<div class="nav1">
+			<div class="left"></div>
+			<div class="right">
+				<a href="#">海外酒店</a>
+				<a href="#">团购</a>
+				<a href="#">特惠酒店</a>	
+				<a href="#">客栈公寓</a>
+			</div>
+		</div>
+		<div class="nav1">
+			<!-- <div class="left"></div> -->
+			<div class="right">
+				<a href="#">海外酒店</a>
+				<a href="#">团购</a>
+				<a href="#">特惠酒店</a>	
+				<a href="#">客栈公寓</a>
+				<a href="#">特惠酒店</a>
+				<a href="#">客栈公寓</a>
+			</div>
+		</div>
+		<div class="footer">
+			 <a href="#"><img src="images/extra_1.png" ></a>
+			 <a href="#"><img src="images/extra_2.png" ></a>
+		</div>
+	</body>
+</html>

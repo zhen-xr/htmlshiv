@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body{
+				background-color: #ccc;
+				font-family: "microsoft yahei";
+				font-size: 22px;
+			}
+			section{
+				width: 1000px;
+				margin: 40px auto;
+			}
+			h3{
+				font-weight: 400;
+			}
+			ul{
+				background-color: #fff;
+				border:1px solid #000000;
+				
+			}	
+			li{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				margin: 10px;
+			}
+			section:nth-child(1) ul{
+				overflow: hidden;
+			}
+			section:nth-child(1) li{
+				float: left;
+			}
+			section:nth-child(2) ul{
+				display: flex;
+			}
+			section:nth-child(3) ul{
+				display: flex;
+				flex-direction: row;
+			}
+			section:nth-child(4) ul{
+				display: flex;
+				flex-direction: row-reverse;
+			}
+			section:nth-child(5) ul{
+				display: flex;
+				flex-direction: column-reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h3>传统布局</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>伸缩布局 display:flex</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+		<section>
+			<h3>伸缩布局 display:flex 设置方向(row水平方向)</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+		<section>
+			<h3>伸缩布局 display:flex 设置方向(row-reverse水平翻转)</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+		<section>
+			<h3>伸缩布局 display:flex 设置方向(colum 垂直方向)</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+	</body>
+</html>

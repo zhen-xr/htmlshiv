@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				width: 2px;
+				height: 150px;
+				background-color: black;
+				margin: 20px auto;
+				transform-origin: bottom center;
+				 animation: rot 60s steps(60) infinite;
+			}
+			@keyframes rot{
+				from{}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
