@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>注册页面</h1>
+		<input type="text" placeholder="请输入用户名" id="userName">
+		
+		<script>
+			document.querySelector('#userName').onblur = function (){
+				var ajaxObj = new XMLHttpRequest();
+				ajaxObj.open('get','ajax_check.php?userName='+this.value);
+				ajaxObj.send();
+				ajaxObj.onreadystatechange = function(){
+					if(ajaxObj.readyState==4 && ajaxObj.status==200){
+						if(ajaxObj.responseText=='have'){
+							alert('用户名已被注册');
+						}else{
+							alert('用户名注册成功');
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+
+			.container {
+				display: flex;
+				height: 100%;
+				border: 1px solid #0094ff;
+				width: 70%;
+				margin: 0 auto;
+				flex-direction: column;
+			}
+
+			.messageBox {
+				flex: 9;
+				background: yellowgreen;
+				overflow: scroll;
+			}
+
+			.inputBox {
+				flex: 2;
+				background: skyblue;
+				display: flex;
+			}
+
+			.messageText {
+				flex: 8;
+				font-size: 30px;
+			}
+
+			.sendBtn {
+				flex: 2;
+				font-size: 30px;
+				border-width: 0px;
+				background: hotpink;
+			}
+
+			.messageBox div {
+				height: 30px;
+				border: 1px solid #0094ff;
+				line-height: 30px;
+			}
+
+			.self {
+				background: pink;
+			}
+
+			.other {
+				text-align: right;
+				background: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="messageBox">
+			</div>
+			<div class='inputBox'>
+				<input type="text" class='messageText'>
+				<input type="button" class='sendBtn' value='发送'>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	document.querySelector('.sendBtn').onclick = function(){
+		var xmlObj = new XMLHttpRequest();
+		var inputValue = document.querySelector('.messageText').value;
+		xmlObj.open('GET','chatRobot.php?message='+ inputValue);
+		
+		var createDiv = document.createElement('div');
+		createDiv.className = 'self';
+		createDiv.innerText = inputValue;
+		
+		document.querySelector('.messageBox').appendChild(createDiv);
+		
+		xmlObj.send();
+		
+		xmlObj.onreadystatechange = function() {
+			if(xmlObj.readyState == 4 && xmlObj.status == 200){
+				console.log(xmlObj.responseText);
+				
+				var otherDiv = document.createElement('div');
+				otherDiv.className = 'other';
+				otherDiv.innerText = xmlObj.responseText;
+				document.querySelector('.messageBox').appendChild(otherDiv);
+			}
+		}
+	}
+</script>

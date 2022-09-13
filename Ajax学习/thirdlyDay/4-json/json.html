@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>获取</h1>
+		<input type="button" value="获取" id="getstars">
+	</body>
+</html>
+<script>
+	document.querySelector('#getstars').onclick = function() {
+		var ajax = new XMLHttpRequest();
+		ajax.open('POST', 'json.php');
+		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		ajax.send();
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState == 4 && ajax.status == 200) {
+				var starArr = JSON.parse(ajax.responseText);
+				console.log(starArr);
+				var str = "";
+
+				str += '<table>';
+				for (var i = 0; i < starArr.length; i++) {
+					var currentStar = starArr[i];
+					str+='<tr>';
+					str+='<td>'+currentStar.name+'</td>';
+					str+='<td>'+currentStar.skill+'</td>';
+					str+='<td><img src ="'+currentStar.pic+'"></td>';
+					str+='</tr>';
+				}
+				str += '</table>';
+				console.log(str);
+				document.body.innerHTML = str;
+			}
+		}
+	}
+</script>

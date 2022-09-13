@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.showBox{
+				width: 200px;
+				height: 200px;
+				border: #000000 1px solid;
+				margin: 20px auto;
+			}
+			.infoBox{
+				width: 300px;
+				height: 100px;
+				border: #000000 1px solid;
+				margin: 20px auto;
+			}
+			body{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="showBox"></div>
+		<div class="infoBox"></div>
+		<input type="button" value="baby" class="starBtn">
+		<input type="button" value="hxm" class="starBtn">
+		<input type="button" value="lh" class="starBtn">
+	</body>
+</html>
+<script>
+	// var img = document.querySelector('.showBox');
+	// var str = document.querySelector('.infoBox');
+	var btnArr = document.querySelectorAll('.starBtn');
+	
+	for(var i=0;i<btnArr.length;i++){
+		btnArr[i].onclick = function(){
+			var ajax = new XMLHttpRequest();
+			
+			ajax.open('POST','getStar.php');
+			ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			
+			ajax.send('name='+this.value);
+			
+			ajax.onreadystatechange = function() {
+				if (ajax.readyState == 4 && ajax.status == 200){
+					var strArr = ajax.responseText.split('|');
+					console.log(strArr);
+					document.querySelector('.showBox').style.background = 'url('+strArr[0]+') no-repeat center / cover';
+					document.querySelector('.infoBox').innerHTML = strArr[1];
+				}
+			}
+		}
+	}
+</script>
