@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<p></p>
+		<p></p>
+		<p></p>
+	</body>
+</html>
+<script>
+	//设置页面中的div和p的边框为1px solid red.
+	window.onload = function() {
+		var divs = document.querySelectorAll("div");
+		for (var i = 0; i < divs.length; i++) {
+			var div = divs[i];
+			div.style.border = "1px solid red";
+		}
+		console.log(divs);
+
+		var ps = document.getElementsByTagName("p");
+		console.log(ps);
+		for (var i = 0; i < ps.length; i++) {
+			var p = ps[i];
+			p.style.border = "1px solid pink";
+		}
+	}
+</script>

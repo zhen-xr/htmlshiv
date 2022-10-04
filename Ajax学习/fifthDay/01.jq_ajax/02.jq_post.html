@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="测试jq_post方法" id="jqPost">
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#jqPost").click(function(){
+			$.post("02.jq_post.php",{name:"魈",skill:"镜妖傩舞"},function(data){
+				console.log(data);
+			},'json')
+		})
+	})
+</script>

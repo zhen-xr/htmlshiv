@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			p{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<p></p>
+	</body>
+</html>
+<script>
+	window.onload = function(){
+		var div = obj.tag("div");
+		obj.setborder(div);
+		obj.setbgc(div);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	var obj = {
+		//dom元素获取
+		getEle:{
+			tag: function(tagName){
+				return document.getElementsByTagName(tagName);
+			},
+			id: function(idName){
+				return document.getElementById(idName);
+			},
+			class: function(className){
+				return document.getElementsByClassName(className);
+			}
+		},
+		//style样式获取
+		setCss:{
+			setborder: function(elements){
+				for(var i=0;i<elements.length;i++){
+					var ele = elements[i];
+					ele.style.border = "1px solid #000";
+				}
+			},
+			setbgc: function(elements){
+				for(var i=0;i<elements.length;i++){
+					var ele = elements[i];
+					ele.style.backgroungColor = "pink";
+				}
+			}
+		}
+	}
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var songList = [{
+			songName: "恋爱告急",
+			singer: "鞠婧祎"
+		},
+		{
+			songName: "爱你",
+			singer: "王心凌"
+		},
+		{
+			songName: "晴天",
+			singer: "杰伦"
+		},
+		{
+			songName: "断桥残雪",
+			singer: "许嵩"
+		}
+	];
+	
+	function SongManager(){
+		this.songList = songList;
+	}
+	SongManager.prototype = {
+		// 初始化
+		inti:function(songList){
+			this.songList = songList;
+		},
+		// 添加
+		addSong:function(song) {
+			this.songList.push(song);
+		},
+		// 查找
+		selectSong:function(songName){
+			for(var i=0;i<songList.length;i++){
+				var song = songList[i];
+				if(song.songName == songName){
+					return song;
+				}
+			}
+			return null;
+		},
+		// 删除
+		removeSong:function(songName){
+			var song = this.selectSong(songName);
+			var index = this.songList.indexOf(song);
+			this.songList.splice(index,1);
+			if(song == null){
+				throw"歌曲不存在!";
+			}
+		},
+		// 替换
+		alterSong:function (songName,singer) {
+			var song = this.selectSong(songName);
+			song.singer = singer;
+		}
+	}
+	
+	var updateSongList = new SongManager();
+	updateSongList.addSong({
+		songName:"李白",
+		singer:"李荣浩"
+	})
+	updateSongList.removeSong("李白");
+	updateSongList.alterSong("晴天","周杰伦");
+	
+	console.log(songList);
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<script>
+	// 挖坑
+	var str = "我的名字是name,我喜欢吃的食物是food";
+	
+	//填坑
+	var obj = {
+		name:"魈",
+		food:"杏仁豆腐"
+	};
+	
+	//正则获取
+	var reg1 = /name/;
+	var reg2 = /food/;
+	var reg3 = /\w+/;
+	
+	//查找
+	var result1 = reg1.exec(str);
+	var result2 = reg2.exec(str);
+	
+	//获取
+	var keyName = result1[0];
+	var keyFood = result2[0];
+	console.log(keyName);
+	console.log(keyFood);
+	
+	//获取填坑内容
+	var value1 = obj[keyName];
+	var value2 = obj[keyFood];
+	console.log(value1);
+	console.log(value2);
+	
+	//替换内容
+	str = str.replace(keyName,value1);
+	str = str.replace(keyFood,value2);
+	console.log(str);
+	
+</script>
+

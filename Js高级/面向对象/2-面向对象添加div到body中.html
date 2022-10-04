@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+
+</html>
+<script src="jquery-1.12.2.js"></script>
+<script>
+	//要求创建出来一个div 并且设置样式，然后加到body标签当中
+	function box(){
+		var div = document.createElement('div');
+		div.style.width = "200px";
+		div.style.height = "200px";
+		div.style.backgroundColor = "pink";
+		document.body.appendChild(div);
+	}
+	box();
+	
+	window.onload = function(){
+		var div = document.createElement("div");
+		div.style.width = "100px";
+		div.style.height = "100px";
+		div.style.backgroundColor = "orange";
+		document.body.appendChild(div);
+	// }
+	// window.onload = function(){
+
+		$("body").append("<div style='width:100px;height:100px;background-color:red'></div>")
+		
+	}
+	
+</script>

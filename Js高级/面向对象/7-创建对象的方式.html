@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//封装
+	function createSong(songName,singerName){
+		var obj = new Object();
+		obj.songName = songName;
+		obj.singerName = singerName;
+		return obj;
+	}
+	var obj1 = createSong("恋爱告急","鞠婧祎");
+	var obj2 = createSong("过去完成时","鞠婧祎");
+	console.log(obj1);
+	console.log(obj2);
+	// document.querySelector('body').innerHTML = "obj1";
+</script>

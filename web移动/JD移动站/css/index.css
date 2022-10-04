@@ -1,0 +1,276 @@
+/* 最外层盒子 */
+.jd_container{
+	width: 100%;
+	min-height: 800px;
+	background-color: #eee;
+}
+
+/* 顶部通栏 */
+.jd_header{
+	height: 40px;
+	width: 100%;
+	background-color: rgba(201,21,35,0);
+	/* 设置padding吧input挤进去 */
+	position: fixed;
+	z-index: 99;
+	padding-left: 70px;
+	padding-right: 60px;
+}
+/* logo */
+.jd_header .header_logo{
+	width: 60px;
+	height: 36px;
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	background-image: url('../images/sprites.png');
+	background-repeat: no-repeat;
+	background-position: 0 -103px;
+	/* 设置背景图片的压缩 防止用户看到像素颗粒 */
+	background-size: 200px 200px;
+}
+/* input框 */
+.jd_header .header_search{
+	width: 100%;
+	height: 34px;
+	margin-top: 2px;
+	border-radius: 17px;
+	padding-left: 25px;
+}
+/* 登录 */
+.jd_header .header_login{
+	position: absolute;
+	right: 15px;
+	top: 0;
+	line-height: 40px;
+	color: #fff;
+	font-size: 17px;
+}
+/* 搜索图标 */
+.jd_header .header_glass{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-image: url('../images/sprites.png');
+	background-size: 200px 200px;
+	background-position: -60px -109px;
+	background-repeat: no-repeat;
+	top: 10px;
+	left: 75px;
+}
+
+/* 轮播图 */
+.jd_banner{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.jd_banner .banner_images{
+	width: 1000%;
+	/* transform: translateX(-10%); */
+}
+.jd_banner .banner_images li{
+	float: left;
+	width: 10%;
+}
+.jd_banner .banner_images li a{
+	display: block;
+	width: 100%;
+}
+.jd_banner .banner_images li a img{
+	display: block;
+	width: 100%;
+}
+/* 轮播图里边索引标签 */
+.jd_banner .banner_index{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -47px;
+}
+.jd_banner .banner_index li{
+	float: left;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	margin-left: 5px;
+}
+.jd_banner .banner_index li.current{
+	background-color: #fff;
+}
+
+/* 导航 */
+.jd_nav{
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.jd_nav ul{
+	width: 100%;
+	padding-top: 5px;
+}
+.jd_nav ul li{
+	float: left;
+	width: 25%;
+}
+.jd_nav ul li a{
+	width: 100%;
+	display: block;
+}
+.jd_nav ul li a img{
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+}
+.jd_nav ul li a p{
+	text-align: center;
+	color: #999;
+	padding: 5px 0;
+}
+
+/* 主要内容 */
+.jd_main{
+	width: 100%;
+	padding: 0 5px;
+	margin-top: 10px;
+}
+.jd_main .main_content{
+	width: 100%;
+	background-color: #fff;
+	min-height: 160px;
+	margin-bottom: 5px;
+	/* 阴影 */
+	box-shadow: 0 0 2px #ccc;
+}
+.jd_main .main_content .content_top{
+	height: 32px;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+.jd_main .main_content .content_bottom{
+	width: 100%;
+}
+/* 第一个盒子 */
+.jd_main .main_content:nth-child(1){
+	
+}
+.jd_main .main_content:nth-child(1) .content_top{
+	border-bottom: none;
+}
+.jd_main .main_content:nth-child(1) .content_top span{
+	background-image: url("../images/seckill-icon.png");
+	background-size: 20px 25px;
+	float: left;
+	width: 20px;
+	height: 25px;
+	margin-top: 2px;
+	margin-left: 5px;
+}
+.jd_main .main_content:nth-child(1) .content_top p{
+	color: red;
+	float: left;
+	line-height: 32px;
+	margin-left: 10px;
+}
+.jd_main .main_content:nth-child(1) .content_top ul{
+	height: 32px;
+	line-height: 32px;
+	padding-top: 8.5px;
+}
+.jd_main .main_content:nth-child(1) .content_top ul li{
+	float: left;
+	color: #fff;
+	background-color: #000;
+	height: 15px;
+	width: 15px;
+	margin-left: 2px;
+	text-align: center;
+	line-height: 15px;
+}
+.jd_main .main_content:nth-child(1) .content_top ul li:nth-child(3){
+	/* 背景透明 */
+	background-color: transparent;
+	color: #000;
+}
+.jd_main .main_content:nth-child(1) .content_top ul li:nth-child(6){
+	/* 背景透明 */
+	background-color: transparent;
+	color: #000;
+}
+.jd_main .main_content:nth-child(1) .content_top a{
+	float: right;
+	line-height: 32px;
+	margin-right: 10px;
+	color: #888;
+}
+.jd_main .main_content:nth-child(1) .content_bottom{
+	width: 100%;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul{
+	width: 100%;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li{
+	float: left;
+	width: 33.333333%;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li a{
+	display: block;
+	width: 100%;
+	border-right: 1px solid #999;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li:last-child a{
+	border-right: none;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li a img{
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li p{
+	text-align: center;
+	padding: 3px 0;
+	font-size: 12px;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li p:nth-child(2){
+	color: red;
+}
+.jd_main .main_content:nth-child(1) .content_bottom ul li p:nth-child(3){
+	text-decoration: line-through;
+}
+/* 非第一个盒子样式 */
+.jd_main .main_content:nth-child(n+2) .content_top{}
+.jd_main .main_content:nth-child(n+2) .content_top span{
+	color: red;
+	line-height: 32px;
+	margin-left: 15px;
+	position: relative;
+}
+.jd_main .main_content:nth-child(n+2) .content_top span::before{
+	content: "";
+	position: absolute;
+	height: 15px;
+	width: 5px;
+	background-color: red;
+	left: -10px;
+	top: 8.5px;
+	
+}
+/* 设置底部样式 */
+.jd_main .main_content:nth-child(n+2) .content_bottom{
+	width: 100%;
+}
+.jd_main .main_content:nth-child(n+2) .content_bottom ul{
+	width: 100%;
+}
+.jd_main .main_content:nth-child(n+2) .content_bottom ul li{
+	width: 50%;
+}
+.jd_main .main_content:nth-child(n+2) .content_bottom ul li a{
+	display: block;
+	width: 100%;
+}
+.jd_main .main_content:nth-child(n+2) .content_bottom ul li a img{
+	display: block;
+	width: 100%;
+}

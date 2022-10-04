@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var max = function(){
+		console.log(arguments);
+		var maxNum = arguments[0];
+		for(var i=0;i<arguments.length;i++){
+			if(maxNum<arguments[i]){
+				maxNum = arguments[i];
+			}
+		}
+		return maxNum;
+	}
+	var max = max(0,4,0,8,2,5);
+	console.log(max);
+	
+	//练习，使用Function创建一个函数，
+	//给函数传入任意个数的参数，
+	//在函数内进行去重操作，然后返回去重后的数组
+	
+</script>

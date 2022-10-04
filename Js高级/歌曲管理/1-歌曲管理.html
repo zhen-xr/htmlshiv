@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var songList = [{
+			songName: "恋爱告急",
+			singer: "鞠婧祎"
+		},
+		{
+			songName: "爱你",
+			singer: "王心凌"
+		},
+		{
+			songName: "晴天",
+			singer: "杰伦"
+		},
+		{
+			songName: "断桥残雪",
+			singer: "许嵩"
+		}
+	];
+	// 添加 push
+	songList.push({
+		songName: "李白",
+		singer: "李荣浩"
+	});
+	console.log(songList);
+
+	// // 删除 splice(起始索引值,删几个)
+	for (var i = 0; i < songList.length; i++) {
+		var song = songList[i];
+		if (song.songName == "李白") {
+			songList.splice(i, 1);
+		}
+	}
+	console.log(songList);
+
+	// 改
+	for (var i = 0; i < songList.length; i++) {
+		var song = songList[i];
+		if (song.songName == "晴天") {
+			song.singer = "周杰伦";
+		}
+	}
+	console.log(songList);
+	
+	// 查
+	for (var i = 0; i < songList.length; i++) {
+		var song = songList[i];
+		if (song.songName == "恋爱告急") {
+			console.log(song);
+		}
+	}
+</script>

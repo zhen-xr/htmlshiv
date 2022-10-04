@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="测试工具函数" id="textTool">
+		<ul>
+			<li>我爱北京天安门</li>
+			<li>天安门上太阳升</li>
+			<li>伟大领袖毛泽东</li>
+			<li>指引我们向前进</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" src="ajax_tool.js"></script>
+<script>
+	document.querySelector('#textTool').onclick = function() {
+		ajax_tool_pro({
+			method:"get",
+			success:function(data){
+				console.log(data);
+			},
+			data:undefined,
+			url:"ajax.php"
+		})
+	} 
+</script>

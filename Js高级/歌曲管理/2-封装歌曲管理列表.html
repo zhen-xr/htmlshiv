@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var songList = [{
+			songName: "恋爱告急",
+			singer: "鞠婧祎"
+		},
+		{
+			songName: "爱你",
+			singer: "王心凌"
+		},
+		{
+			songName: "晴天",
+			singer: "杰伦"
+		},
+		{
+			songName: "断桥残雪",
+			singer: "许嵩"
+		}
+	];
+	// 增
+	function addSong(song) {
+		songList.push(song);
+	}
+	addSong({
+		songName: "李白",
+		singer: "李荣浩"
+	})
+	console.log(songList);
+
+	// 删
+	function removeSong(songName) {
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName == songName) {
+				songList.splice(i, 1);
+			}
+		}
+	}
+	removeSong("李白");
+	console.log(songList);
+	
+	// 改
+	function alterSong(songName,singer) {
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName == songName) {
+				song.singer = singer;
+			}
+		}
+	}
+	alterSong("晴天","周杰伦");
+	console.log(songList);
+	
+	// 查
+	function checkSong(songName,singer) {
+		for (var i = 0; i < songList.length; i++) {
+			var song = songList[i];
+			if (song.songName == songName || song.singer == singer) {
+				console.log(song);
+			}
+		}
+	}
+	checkSong("恋爱告急","");
+</script>

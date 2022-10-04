@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="发送ajax请求" id="sendAjax">
+	</body>
+</html>
+<script>
+	document.querySelector('#sendAjax').onclick = function() {
+		var ajax = new XMLHttpRequest();
+		ajax.open('ajax','ajax.php');
+		ajax.send();
+		ajax.onreadystatechange = function() {
+			if(ajax.readyState ==4 && ajax.status){
+				console.log(ajax.responseText);
+			}
+		}
+	}
+</script>

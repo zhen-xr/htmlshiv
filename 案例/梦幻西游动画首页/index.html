@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>梦幻西游</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body,
+			html {
+				width: 1920px;
+				height: 1086px;
+			}
+
+			.bg {
+				width: 1920px;
+				height: 1086px;
+				overflow: hidden;
+				background: url(images/xyq.webp);
+			}
+
+			.box {
+				width: 1000px;
+				height: 240px;
+				margin: 500px auto;
+			}
+			.char{
+				width: 190px;
+				height: 240px;
+				float: left;
+			}
+
+			.char:nth-child(1) {
+				background: url(images/west_01.png) no-repeat;
+				animation: play-1 1.2s steps(8) infinite;
+			}
+			.char:nth-child(2) {
+				background: url(images/west_02.png) no-repeat;
+				animation: play-2 1.2s steps(8) infinite;
+			}
+			.char:nth-child(3) {
+				background: url(images/west_03.png) no-repeat;
+				animation: play-3 1.2s steps(8) infinite;
+			}
+			.char:nth-child(4) {
+				background: url(images/west_04.png) no-repeat;
+				animation: play-4 1.2s steps(8) infinite;
+			}
+
+			@keyframes play-1 {
+				0% {
+					background-position: 0 0;
+				}
+
+				100% {
+					background-position: -1600px top;
+				}
+			}
+			@keyframes play-2 {
+				0% {
+					background-position: 0 0;
+				}
+			
+				100% {
+					background-position: -1600px top;
+				}
+			}
+			@keyframes play-3 {
+				0% {
+					background-position: 0 0;
+				}
+			
+				100% {
+					background-position: -1360px top;
+				}
+			}
+			@keyframes play-4 {
+				0% {
+					background-position: 0 0;
+				}
+			
+				100% {
+					background-position: -1680px top;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg">
+			<div class="box">
+				<div class="char"></div>
+				<div class="char"></div>
+				<div class="char"></div>
+				<div class="char"></div>
+			</div>
+		</div>
+	</body>
+</html>

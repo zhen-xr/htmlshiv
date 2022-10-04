@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>jqjsonP</h1>
+		<input type="button" id="jqJsonp" value="jsonp" />
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+	function myJsonpCallback(data){
+		console.log(data);
+	}
+	$(function(){
+		$("#jqJsonp").on('click',function(){
+			//使用jq发送jsonp
+			$.ajax({
+				url:'xxx.php',
+				dataType:'jsonp',
+				success:function(data){
+					console.log(data);
+				},
+				jsonpCallback:"myJsonpCallback"
+			});
+		})
+	})
+</script>

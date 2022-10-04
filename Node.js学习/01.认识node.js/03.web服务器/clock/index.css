@@ -1,0 +1,32 @@
+
+			.box1 {
+				margin: 0;
+				padding: 5px;
+				height: 200px;
+				position: relative;
+			}
+
+
+			button {
+				margin: 5px;
+			}
+
+			.box2 {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				border: 1px solid #ccc;
+				left: 0;
+			}
+
+			.box3 {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				border: 1px solid #ccc;
+				left: 0;
+				top: 160px;
+			}
+		

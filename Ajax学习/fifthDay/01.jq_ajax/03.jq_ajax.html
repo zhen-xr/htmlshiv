@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="测试jq_ajax方法" id="jqAjax">
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#jqAjax").on("click",function(){
+			$.ajax({
+				url:'03.jq_ajax.php',
+				success:function(data){
+					console.log(data);
+				},
+				type:'post',
+				dataType:'json',
+				data:{"name":"魈","food":"杏仁豆腐"},
+				beforeSend:function(){
+					console.log('发送之前调用');
+				},
+				error:function(){
+					console.log('请求失败了');
+				}
+			})
+		})
+	})
+</script>

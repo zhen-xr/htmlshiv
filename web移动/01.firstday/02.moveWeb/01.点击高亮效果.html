@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scale=no">
+		<title></title>
+		<style>
+			body{
+				background-color: pink;
+			} 
+			a{
+				width: 200px;
+				height: 200px;
+				display: block;
+				/* 手指点击 清楚默认的 高度效果透明 */
+				-wedkit-tap-highlight-color: transparent;
+				/* 盒子模型 */
+				/* 保证内容的大小不变 */
+				box-sizing: content-box;
+				/* 保证盒子大小不变 内容可能会变 移动端设置所有的盒子都是border-box目的 保证盒子大小不变 */
+				box-sizing: border-box;
+			}
+			input{
+				/* 扁平化 */
+				border: 0;
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				-webkit-appearance: none;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#"></a>
+		<input type="button" value="按钮">
+	</body>
+</html>

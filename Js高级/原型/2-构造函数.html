@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Student(studentName,studentSkill){
+		this.name =studentName;
+		this.skill =studentSkill;
+	}
+	var obj =new Student("魈","镜妖傩舞");
+	console.log(obj);
+	console.log("我叫"+obj.name+"我会"+obj.skill);
+	
+	document.querySelector("body").innerHTML="我叫"+obj.name+"我会"+obj.skill;
+	
+	// 构造函数.prototype
+	console.log(Student.prototype);
+	// console.log(obj.prototype);
+	
+	//如何给原型对象添加属性和方法？
+	//使用对象的动态特性prototype.exercise
+	Student.prototype.exercise = function(){
+		console.log(this.name+"让风告诉你！");
+	}
+	obj.exercise();
+</script>
